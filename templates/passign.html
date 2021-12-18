@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="icon" href="static/img/logo1.png" type="image/jpg" sizes="16x16">
+    <title>Donor Assign</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .container1 {
+            background: #3498db;
+            position: absolute;
+            height: 100vh;
+            width: 100vw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        #form_login {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 40vw;
+            margin: 0px;
+            padding: 18px;
+
+        }
+
+        @media screen and (max-width: 880px) {
+            #form_login {
+                min-width: 70vw;
+
+                padding: 17px;
+
+            }
+
+
+        }
+
+        @media screen and (max-width: 600px) {
+            #form_login {
+                min-width: 85vw;
+
+                padding: 17px;
+
+            }
+
+
+        }
+
+        @media screen and (max-width: 400px) {
+            #form_login {
+                min-width: 100vw;
+
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container1">
+        <form id="form_login">
+            <div class="form-group">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <ul class="nav nav-pills card-header-pills">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/home">Home</a>
+                            </li>
+                            {% if appid is defined %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/application">Track ID</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <h5 style="padding: 8px;" class="card-title">Information</h5>
+                        {% if appid is defined %}
+                        <p class="card-text">Sorry,No donor found having blood group {{blood}}. </p>
+                        <p class="card-text">Note your reference id&nbsp;&nbsp;<strong>{{appid}}</strong> </p>
+                        <p class="card-text">Please keep tracking your application every hour.</p>
+                        {% else %}
+                        <p class="card-text">No Donor assigned is till now</p>
+                        {% endif %}
+                        <div class="card-footer text-muted">
+                            
+                            {% if appid is defined %}
+                            <a target="_blank" href="/printPatient/{{aid}}" class="btn btn-primary">Print Detail</a>
+                            {% endif %}
+                          </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+

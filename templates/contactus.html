@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Form</title>
+
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="static/css/style.css"/>
+	<link rel="stylesheet" href="static/css/contact.css" />
+
+	<link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Noto+Serif+JP&family=Roboto:wght@300&display=swap"
+        rel="stylesheet" />
+
+		<link rel="icon" href="static/img/logo1.png" type="image/jpg" sizes="16x16">
+
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script> 
+       
+	
+</head>
+
+<body>
+<section id="HOME">
+    <header>
+        <!-- <nav class="navbar h-nav"> -->
+
+		<a href="/home" class="logo"><img src="static/img/logo2.png" alt="logo" /></a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu" style="margin-bottom: 0;">
+            <li><a  href="/home" onclick="toggleMenu();">HOME</a></li>
+            <li><a href="/volunteer" onclick="toggleMenu();">VOLUNTEER</a></li>
+            <li><a  href="/contact" onclick="toggleMenu();">CONTACT US</a></li>
+        </ul>
+
+        <!-- </nav> -->
+    </header>
+
+  <div class="container1">
+		<div class="form">
+			<div class="contact-info">
+				<h3 class="title">Let's get in touch</h3>
+				<p class="text">
+					Any feedback or help ?
+					Please contact us!
+				</p>
+				<br>
+				<div class="info">
+					<div class="information">
+						<div class="social-icons">
+							<a href=""> <i class="fa fa-envelope" aria-hidden="true"></i></a>
+						</div>
+						<p style="margin-bottom: 0;">samparkplasma@gmail.com</p>
+
+					</div>
+
+				</div>
+
+				<div class="social-media">
+					<p style="margin-bottom: 0;">Connect with us :</p>
+					<div class="social-icons">
+
+						<a style=" margin-top: 0.5rem;" href="https://twitter.com/samparkplasma" target="_blank">
+							<i class="fab fa-twitter"></i>
+						</a>
+						<a style=" margin-top: 0.5rem;" href="https://instagram.com/samparkplasma" target="_blank">
+							<i class="fab fa-instagram"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="contact-form">
+				
+				<h3 style="margin: 10px; text-align: center; max-width: 100%;" class="title">Contact us</h3>
+
+				{% if err is defined %}
+				<div style="margin: 10px;" class="alert alert-danger" role="alert">
+					<strong>Missing!&nbsp;&nbsp;</strong>{{err}}
+					  </div>
+				{% endif %}
+			
+				{% if mess is defined %}
+				<div style="margin: 10px;" class="alert alert-success" role="alert">
+					<strong>Success!&nbsp;&nbsp;&nbsp;</strong>{{mess}}
+					  </div>
+				{% endif %}
+
+					
+
+				<form action="/contact" method="POST">
+
+					<div class="form-group ">
+						<input type="text" id="name" name="name" placeholder="Full Name" class="form-control" required>
+					<div class="invalid-feedback">
+						Must contain only English Alphabets (2-50 letters only)
+					</div>
+					</div>
+					<div class="form-group">
+						<input type="text" id="phone" name="mob" placeholder="Phone no." class="form-control">
+						<div class="invalid-feedback">
+						Invalid phone no.
+					  </div>
+					</div>
+					<div class="form-group">
+						<input type="email" id="email" name="email" placeholder="Email" class="form-control" required>
+					<div class="invalid-feedback">
+						Invalid email
+					</div>
+					</div>
+					<div class="form-group">
+						<textarea style="min-height: 150px; resize: none; overflow-y: auto;" placeholder="Message"
+							name="message" class="form-control" required></textarea>
+					</div>
+
+					<button type="submit" id="submit" value="SUBMIT" class="contact-in-btn">Send</button>
+				</form>
+
+			</div>
+		</div>
+	</div>
+	<footer class="footer" id="CONTACTUS">
+		<div class="container2">
+			<div class="row">
+
+				<div class="footer-col">
+					<h3>Navigate</h3>
+					<ul>
+						<li><a href="/home">Home</a></li>
+						<li><a href="/volunteer">Volunteer</a></li>
+						<li><a href="/contact">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h3>Sampark Plasma</h3>
+					<ul>
+						<li><a href="/sponsors">Sponsor</a></li>
+						<li><a href="/team">Team</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h3>Follow us</h3>
+					<div class="social-links">
+						
+						<a style="padding: 0;" href="https://www.twitter.com/samparkplasma/" target="_blank"><i class="fab fa-twitter"></i></a>
+						<a style="padding: 0;" href="https://www.instagram.com/samparkplasma/" target="_blank"><i class="fab fa-instagram"></i></a>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</section>
+	<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+		<script src="{{url_for('static', filename='js/java.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+</body>
+
+</html>

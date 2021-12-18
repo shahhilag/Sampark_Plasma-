@@ -1,0 +1,138 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sampark Plasma</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+    <link rel="icon" href="static/img/logo1.png" type="image/jpg" sizes="16x16">
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <style>
+        img {
+            display: block;
+            margin: auto;
+            width: 250px;
+            position: relative;
+
+            top: 0px;
+            z-index: 1040;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .terms{
+            margin: 0 0 0;
+            font-weight: bold;
+        }
+        input[type="radio"], input[type="checkbox"] {
+    margin: 0 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+
+        @media screen and (max-width: 720px) {
+            img {
+                display: block;
+                margin: auto;
+                width: 250px;
+                position: relative;
+                /* left: -130px; */
+                top: 0px;
+                z-index: 1040;
+            }
+
+        }
+
+        #button1 {
+            display: block;
+            margin: auto;
+            width: 50%;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #008CBA;
+        }
+
+
+        input[type="checkbox"] {
+            -ms-transform: scale(1.5);
+            /* IE 9 */
+            -webkit-transform: scale(1.5);
+            /* Chrome, Safari, Opera */
+            transform: scale(1.5);
+        }
+
+        .modal {
+            overflow-x: hidden;
+        }
+    </style>
+
+<body onLoad="$('#my-modal').modal('show');">
+    <div id="my-modal" class="modal fade" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <img src="static/img/logo2.png" alt="Logo">
+                </div>
+                <div class="modal-body">
+                    <p
+                        style="text-transform:uppercase; font-family: Georgia, 'Times New Roman', Times, serif; font-weight:bolder; font-size: large; color: #969696; background-color: transparent;text-align: center;">
+                        WE AT SAMPARK PLASMA ARE A GROUP OF STUDENTS WHO AIM
+                        TO CONTRIBUTE TO THE WELFARE AND WELLBEING OF THE SOCIETY IN THESE TOUGH TIMES.THIS MESSAGE AIMS
+                        TO MAKE IT CLEAR TO THE USER THAT WE ARE NOT ENGAGED INTO MEDICAL PROFESSION.
+                        with folded hands we request not to upload any fake data which can create chaos and establish fake hope for patients.
+                        Lets be pure at heart and offer the help needed.
+                        <br>
+                    </p>
+                    <p
+                        style="color: #ff1111;font-family: Georgia, 'Times New Roman', Times, serif; font-weight:bolder; font-size: large;text-align: center;">
+                        WE DO NOT AIM ANY FINANCIAL BENEFITS NOR PROMOTE ANYONE ENGAGING IN ANY SUCH ACTIVITIES.
+                        <br><br>
+                        JAI HIND.
+                    </p><br>
+                    <form class="form" id="check" action="/home">
+                        <input type="checkbox" id="accept" name="accept" value="accept" >
+                        <label class="terms" style="margin-left: 10px;" for="accept"> I accept above terms & conditions</label><br>
+                    </form>
+                    <input type="button" Id="button1" data-dismiss="modal" aria-hidden="true"
+                        onclick=location.href='/home' value="Submit" />
+                    <script>
+                        $(document).ready(function () {
+
+                            var $submit = $("#button1").hide(),
+                                $cbs = $('input[name="accept"]').click(function () {
+                                    $submit.toggle($cbs.is(":checked"));
+                                });
+
+                        });
+                    </script>
+                    <script>
+                        drake = dragula({
+                            revertOnSpill: true,
+                            mirrorContainer: document.querySelector('.movecontainer')
+                        }).on('drag', function (el, source) {
+                            // On mobile this prevents the default page scrolling while dragging an item.
+                            $(document).on('touchstart', function (e) {
+                                e.preventDefault();
+                            });
+                        }).on('drop', function (el, target, source, sibling) {
+                            // On mobile this turns on default page scrolling after the end of a drag drop.
+                            $(document).off('touchstart');
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

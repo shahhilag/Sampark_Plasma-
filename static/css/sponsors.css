@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.body{
+    height: 1000px;
+}
+.container{
+   background: rgb(0, 0, 0,0.7) url('/static/img/blue.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-blend-mode: darken;
+   padding: 40px 2px;
+   margin: 3px 3px;
+   color: white;
+   text-align: center;
+   font-family: 'Special Elite', cursive;
+   letter-spacing: 6px;
+   font-size: 28px;
+}
+.sponsor{
+    text-align: center;
+}
+.par{
+    padding: 110px 2px;
+    margin: 2px 2px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.blank{
+    border-bottom: 1px solid rgb(133, 133, 133);
+    width: 70%;
+    margin: 28px auto; 
+}
+.secondsec{
+    text-align: center;
+}
+.secondsec img{
+    height: 190px;
+}
+.par2{
+    padding: 52px 152px;
+    font-size: 17px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.btn{
+    padding: 12px 8px;
+    color: rgb(255, 255, 255);
+    background: #3498db;
+    font-size: 13px;
+    border-radius: 4px;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+}
+
+
+@media (max-width: 809px) and (min-width: 500px){
+    .body{
+        height: 900px;
+    }
+    .par2{
+        padding: 35px 50px;
+        font-size: 15px;
+    }
+    .secondsec img {
+        height: 150px;
+    }
+    .btn{
+        font-size: 15px;
+    }
+    .par{
+        font-size: 20px;
+        padding: 102px;
+    }
+    .container{
+        font-size: 21px;
+        letter-spacing: 2px;
+    }
+}
+@media (max-width: 499px) and (min-width: 388px){
+    .body{
+        height: 730px;
+    }
+    .container{
+        font-size: 17px;
+        padding: 30px 2px;
+        letter-spacing: 3px;
+    }
+    .par{
+        font-size: 16px;
+        padding: 75px 2px;
+    }
+    .secondsec img {
+        height: 120px;
+    }
+    .par2{
+        font-size: 13px;
+        padding: 41px 90px;
+    }
+    .btn{
+        padding: 0px 11px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 387px){
+    .body{
+        height: 660px;
+    }
+    .container{
+        font-size: 14px;
+        letter-spacing: 2px;
+        padding: 23px 2px;
+    }
+    .par{
+        font-size: 12px;
+        padding: 80px 2px;
+    }
+    .secondsec img {
+        height: 100px;
+    }
+    .par2{
+        padding: 40px 30px;
+        font-size: 12px;
+    }
+    .btn{
+        padding: 0px 12px;
+        font-size: 10px;
+    }
+}

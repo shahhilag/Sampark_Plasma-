@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <link rel="icon" href="static/img/logo1.png" type="image/jpg" sizes="16x16" />
+  <title>Donor Assign</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container1 {
+      background: #3498db;
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #form_login {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 50vw;
+      margin: 0px;
+      padding: 18px;
+    }
+
+    @media screen and (max-width: 880px) {
+      #form_login {
+        min-width: 70vw;
+
+        padding: 17px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      #form_login {
+        min-width: 85vw;
+
+        padding: 17px;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      #form_login {
+        min-width: 100vw;
+      }
+    }
+  </style>
+</head>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Covid Report</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <img src={{val}} style="width: 100%; background: #ee5d5d;" class="img-fluid" alt="Covid Report">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container1">
+
+    <form id="form_login">
+      <div class="form-group">
+
+
+        <ul class="list-group" style=" padding: 12px 10px;border-color: #0051a8; border-color: #0051a8;">
+
+          <li class="list-group-item active" aria-current="true">Patient Details</li>
+          <li class="list-group-item">Name: {{allCon.name}}</li>
+          <li class="list-group-item">Blood group: {{allCon.blood}}</li>
+          <li class="list-group-item">State: {{allCon.state}}</li>
+          <li class="list-group-item">City: {{allCon.city}}</li>
+          <li class="list-group-item">Your reference ID: {{a}}</li>
+          <li class="list-group-item">Contact: {{allCon.mob}}</li>
+
+          <li class="list-group-item">Patient Report: <span style="margin-left: 6px;"><button type="button" class="btn btn-primary" style="border-color: #98bfe9" data-toggle="modal" data-target="#exampleModal">
+            Click
+          </button></span> </li>
+
+        </ul>
+
+      </div>
+      <div class="text-center">
+        <a href="/dnothelpful/{{a}}" class="btn btn-primary btn-lg" style="border-color: #0051a8" role="button">Not Helpful</a>
+        <a href="/home" class="btn btn-primary btn-lg" style="border-color: #0051a8" role="button">Homepage</a>
+
+      </div>
+
+    </form>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

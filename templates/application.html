@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Status</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/donor.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,300" rel="stylesheet" type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Noto+Serif+JP&family=Roboto:wght@300&display=swap"
+        rel="stylesheet" />
+
+
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="icon" href="static/img/logo1.png" type="image/jpg" sizes="16x16">
+    <style>
+        input[type="radio"] {
+            -ms-transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+            
+            transform: scale(1.5);
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <section id="HOME">
+        <header>
+            <a href="/home" class="logo"><img src="static/img/logo2.png" alt="logo" /></a>
+            <div class="toggle" onclick="toggleMenu();"></div>
+            <ul class="menu">
+                <li><a href="/" onclick="toggleMenu();">HOME</a></li>
+                <li><a href="/volunteer" onclick="toggleMenu();">VOLUNTEER</a></li>
+                <li><a href="/contact" onclick="toggleMenu();">CONTACT US</a></li>
+            </ul>
+        </header>
+
+        <form action="/application" method="post">
+            <u>
+                <h1>Application Status</h1>
+            </u>
+            <fieldset>
+                <legend>
+                    <span class="number">1</span>You are Donor or Receiver ?
+                </legend>
+                <div class="form-group some-class" style="display: flex">
+                    <label><input style="margin-left: 40px" type="radio" name="response" value="donor"
+                            required />Donor</label>
+                    <label><input style="margin-left: 40px" type="radio" name="response"
+                            value="receiver" />Receiver</label>
+                </div>
+                <legend><span class="number">2</span>Application Id-:</legend>
+                <div class="form-group">
+                    <input type="text" id="name" name="aid" placeholder="Your ID" class="form-control" required>
+                </div>
+            </fieldset>
+
+            <br /><br />
+            <button type="submit">Submit</button>
+        </form>
+        <footer class="footer" id="CONTACT US">
+            <div class="container2">
+                <div class="row">
+
+                    <div class="footer-col">
+                        <h3>Navigate</h3>
+                        <ul>
+                            <li><a href="/home">Home</a></li>
+                            <li><a href="/volunteer">Volunteer</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Sampark Plasma</h3>
+                        <ul>
+                            <li><a href="/sponsors">Sponsor</a></li>
+                            <li><a href="/team">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Follow us</h3>
+                        <div class="social-links">
+
+                             <a  href="https://www.twitter.com/samparkplasma/" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="https://www.instagram.com/samparkplasma/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <script src="{{url_for('static', filename='js/java.js')}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css" />
+    
+    <link rel="stylesheet" href="static/css/team.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Noto+Serif+JP&family=Roboto:wght@300&display=swap"
+        rel="stylesheet" />
+        
+        <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+        <link rel="icon" href="static/img/logo1.png" type="image/jpg" sizes="16x16">
+    <title>Our Team</title>
+</head>
+
+<body>
+    <section id="HOME">
+        <header>
+
+
+            <a href="/home" class="logo"><img src="static/img/logo2.png" alt="logo" /></a>
+            <div class="toggle" onclick="toggleMenu();"></div>
+            <ul class="menu">
+                <li><a href="/home" onclick="toggleMenu();">HOME</a></li>
+                <li><a href="/volunteer" onclick="toggleMenu();">VOLUNTEER</a></li>
+                <li><a href="/contact" onclick="toggleMenu();">CONTACT US</a></li>
+            </ul>
+
+
+        </header>
+
+        <div class="container">
+            <div class="header">
+                <h1>MEET&nbsp;THE&nbsp;<span style="font-weight: 800; color: #000;">TEAM</span></h1>
+            </div>
+            <div class="sub-container">
+                <div class="teams">
+                    <img src="static/img/hrithik.jpg" alt="Member1">
+                    <div class="name">Hrithik&nbsp;Kumar</div>
+                    <div class="team-links">
+                        <a target="_blank" href="https://www.linkedin.com/in/hrithikkumar2108/"><i class="fab fa-linkedin-in"></i></a>
+                        <p>Ranchi</p>
+                    </div>
+                </div>
+                <div class="teams">
+                    <img src="static/img/rishi.jpg" alt="Member2">
+                    <div class="name">Rishabh&nbsp;Raj Shukla</div>
+                    <div class="team-links">
+                        <a target="_blank" href="https://www.linkedin.com/in/rajshukla1102/"><i class="fab fa-linkedin-in"></i></a>
+                        <p>Varanasi</p>
+
+                    </div>
+                </div>
+                <div class="teams">
+                    <img src="static/img/hilag.jpg" alt="Member3">
+                    <div class="name">Hilag&nbsp;Shah</div>
+                    <div class="team-links">
+                        <a target="_blank" href="https://www.linkedin.com/in/hilag-shah-802299189"><i
+                                class="fab fa-linkedin-in"></i></a>
+
+                                <p>Vadodara</p>
+                    </div>
+                </div>
+                <div class="teams">
+                    <img src="static/img/prachi.jpg" alt="Member4">
+                    <div class="name">Prachi&nbsp;Gurjar</div>
+                    <div class="team-links">
+                        <a target="_blank" href="https://www.linkedin.com/in/prachi-gurjar-64030461/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                                <p>Pune</p>
+
+                    </div>
+                </div>
+                <div class="teams">
+                    <img src="static/img/harsh.jpg" alt="Member5">
+                    <div class="name">Harsh&nbsp;Kumar</div>
+                    <div class="team-links">
+                        <a target="_blank" href="https://www.linkedin.com/in/harsh-kumar-4967901aa/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                                <p>Patna</p>
+
+                    </div>
+                </div>
+                <div class="teams">
+                    <img src="static/img/sanskar.jpg" alt="Member6">
+                    <div class="name">Sanskar&nbsp;Prasad</div>
+                    <div class="team-links">
+                        <a target="_blank" href="https://www.linkedin.com/in/sanskar-prasad-755150197/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                                <p>Ranchi</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer" id="CONTACTUS">
+            <div class="container2">
+                <div class="row">
+
+					<div class="footer-col">
+						<h3>Navigate</h3>
+						<ul>
+							<li><a href="/home">Home</a></li>
+							<li><a href="/volunteer">Volunteer</a></li>
+							<li><a href="/contact">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="footer-col">
+						<h3>Sampark Plasma</h3>
+						<ul>
+							<li><a href="/sponsors">Sponsor</a></li>
+							<li><a href="/team">Team</a></li>
+						</ul>
+					</div>
+					<div class="footer-col">
+						<h3>Follow us</h3>
+						<div class="social-links">
+							
+                            <a style="padding: 0;" href="https://www.twitter.com/samparkplasma/" target="_blank"><i class="fab fa-twitter"></i></a>
+							<a style="padding: 0;" href="https://www.instagram.com/samparkplasma/" target="_blank"><i class="fab fa-instagram"></i></a>
+							
+						</div>
+					</div>
+				</div>
+            </div>
+        </footer>
+    </section>
+    <script src="{{url_for('static', filename='js/java.js')}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+{% extends 'home.html' %}
+
+{% block title %}-about
+{% endblock title %}
+{% block body %}
+<link rel="stylesheet" href="static/css/donor.css">
+<link
+		href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Nunito:wght@300;400&family=Roboto:wght@300&display=swap"
+		rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Noto+Serif+JP&family=Roboto:wght@300&display=swap"
+		rel="stylesheet" />
+
+<section class="wrapper sect ">
+{% if mess is defined %}
+
+
+   <div style="margin: 10px;" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!&nbsp;</strong>{{mess}}
+      <button style="width:0; margin-right:5px;" type = "button" class="close" data-dismiss = "alert"><b>X</b></button>
+
+</div>
+
+{% endif %}
+   {% if err is defined %}
+
+
+   <div style="margin: 10px;" class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Missing!&nbsp;</strong>{{err}}
+      <button style="width:0; margin-right:5px;" type = "button" class="close" data-dismiss = "alert"><b>X</b></button>
+
+</div>
+
+{% endif %}
+
+<form action="/volunteer" method="post">
+
+   <u>
+      <h1>Volunteer Registration</h1>
+   </u>
+   <br /><br />
+   <h3 style="text-align: center;">Duties and Responsiblities</h3>
+		<br>
+		<p style="padding-left: 10%;"><b>1.</b>You have to email the donor and patient as and when they have been allotted.</p>
+		<p style="padding-left: 10%;"><b>2.</b> You have to message the donor and patient as and when they have been allotted.</p>
+   <br /><br />
+   <fieldset>
+      <legend><span class="number">1</span>What is your name?</legend>
+      <div class="form-group ">
+
+         <input type="text" id="name" name="user_name" placeholder="Full Name" class="form-control" required>
+         <div class="invalid-feedback">
+            Must contain only English Alphabets (2-50 letters only)
+         </div>
+      </div>
+
+
+      <legend><span class="number">2</span>What is your mobile number?</legend>
+
+      <div class="form-group ">
+         <input type="text" min="18" max="65" id="phone" name="user_mobile" placeholder="Mobile No."
+            class="form-control" required>
+         <div class="invalid-feedback">
+            Invalid mobile no.
+         </div>
+      </div>
+
+      <legend><span class="number">3</span>What is your email address?</legend>
+
+      <div class="form-group">
+         <input type="email" id="email" name="email" placeholder="Email" class="form-control" required>
+      <div class="invalid-feedback">
+         Invalid email
+      </div>
+      </div>
+
+      <legend><span class="number">4</span>Select your Gender</legend>
+      <div class="form-group">
+         <select class="form-select form-control" name="gender" aria-label="Default select example" required>
+            <option value="">Gender</option>
+            <option value="male"  >Male</option>
+            <option value="female" >Female</option>
+            <option  value="other" >Other</option>
+           </select>
+      </div>
+
+      <legend><span  class="number">5</span>Which state you are in?</legend>
+      <div class="form-group">
+         <select onchange="print_city('state', this.selectedIndex);" id="sts" name="state" class="form-control"
+            required></select>
+      </div>
+
+
+      <legend><span class="number">6</span>Which city you are in?</legend>
+      <div class="form-group">
+         <select name="city" id="state" class="form-control" required></select>
+      </div>
+
+
+   </fieldset>
+
+   <div class="form-group">
+      <ol style="overflow: hidden;"><strong>By submitting this form,</strong>
+         <li>I confirm that the information I have provided in here is complete and accurate to the best of my
+            knowledge.</li>
+         <br>
+         <li>I agree to hold harmless Sampark Plasma for its use of the information for the exclusive purpose(s) set out
+            above.</li>
+      </ol>
+   </div>
+   <button id= "submit" type="submit">Submit</button>
+</form>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+crossorigin="anonymous"></script>
+
+<script src="static/js/cities.js"></script>
+<script src="static/js/valid-volunteer.js"></script>
+<script language="javascript">print_state("sts");</script>
+
+{% endblock %}

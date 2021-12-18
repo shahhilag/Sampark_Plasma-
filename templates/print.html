@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Receipt</title>
+    <link rel="icon" href="static/img/logo1.png" type="image/jpg" sizes="16x16">
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "VT323", monospace;
+            color: #1f1f1f;
+        }
+
+        .container {
+            background: #f1f1f1;
+            padding: 20px 10px;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .receipt {
+            width: 300px;
+            min-height: 80vh;
+            height: 100%;
+            background: #fff;
+            margin: 0 auto;
+            box-shadow: 5px 5px 19px #ccc;
+            padding: 10px;
+        }
+
+        .logo {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .centerItem {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .survey {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .survey .surveyID {
+            font-size: 20px;
+        }
+
+        .paymentDetails {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            width: 150px;
+        }
+
+
+        .receiptBarcode {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .returnPolicy {
+            margin: 10px 20px;
+            width: 220px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        .summary {
+            margin: auto;
+            width: 255px;
+        }
+
+        .summary .item {
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            width: 220px;
+        }
+
+        .feedback {
+            margin: 20px auto;
+        }
+
+        .feedback h3.clickBait {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .feedback h4.web {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .feedback .break {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .couponContainer .couponBottom {
+            font-size: 13px;
+            text-align: center;
+        }
+        @media print {
+            .noPrint{
+        display:none;
+  }
+}
+    </style>
+</head>
+
+<body>
+    <div id="showScroll" class="container">
+        <button id="printr" onclick="window.print()" class="noPrint">Print Receipt</button><br><br>
+        <script>
+            var doc = new jsPDF();
+
+            $('#printr').click(function () {
+                doc.fromHTML($('#receipt').html(), 15, 15, {
+                    'width': 140,
+                    'elementHandlers': specialElementHandlers
+                });
+                doc.save('receipt.pdf');
+            });
+        </script>
+
+        <div id="receipt" class="receipt">
+            <img src="{{url_for('static', filename='img/logo2.png')}}" alt="logo" style="width:300px"/>
+            <div class="survey bold">
+                <p>Reference Id #</p>
+                <p class="surveyID">{{appid}}</p>
+            </div>
+            
+            <div class="returnPolicy">
+                <div class="detail">{{dateP}}</div>
+                <div class="detail">{{timeP}}</div>
+            </div>
+            <div class="summary">
+                <div class="bold">Registration Summary:</div>
+                <div class="item">
+                    <div>Name:</div>
+                    <div>{{name}}</div>
+                </div>
+                <div class="item">
+                    <div>BloodGroup:</div>
+                    <div>{{blood}}</div>
+                </div>
+                <div class="item">
+                    <div>City:</div>
+                    <div>{{city}}</div>
+                </div>
+                <div class="item">
+                    <div>State:</div>
+                    <div>{{state}}</div>
+                </div>
+            </div>
+            <div style="padding: 15px; ">
+               <p style="text-align: center;">*****************************</p>
+            </div>
+            <div class="legal center">
+                THIS IS TO INFORM EVERYONE THAT WE AT SAMPARK PLASMA ARE
+                ARE NOT INTO ANY MEDICAL
+                SERVICES SUCH LIKE TESTING, PLASMA TRANSFUSION OR ETC.
+                WE NEITHER ENGAGE OURSELVES INTO ANY MONETARY BENEFITS NOR WE PROMOTE SUCH WRONG DOINGS.
+                WE
+                AT SAMPARK PLASMA WILL NOT BE LIABLE FOR ANY KIND OF DAMAGES DUE TO PLASMA DONATION.
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    </div>
+
+</body>
+
+</html>

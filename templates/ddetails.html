@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="icon" href="static/img/logo1.png" type="image/jpg" sizes="16x16">
+    <title>Donor Assign</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container1{
+    background: #3498db;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+#form_login
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 40vw;
+    margin: 0px;
+    padding: 18px;
+
+}
+@media screen and (max-width: 880px) {
+    #form_login
+    {
+        min-width: 70vw;
+        
+        padding: 17px;
+    
+    }
+   
+  
+  }
+@media screen and (max-width: 600px) {
+    #form_login
+    {
+        min-width: 85vw;
+        
+        padding: 17px;
+    
+    }
+   
+  
+  }
+@media screen and (max-width: 400px) {
+    #form_login
+    {
+        min-width: 100vw;
+    
+    }
+   
+  
+  }
+
+    </style>
+</head>
+<body>
+    <div class="container1">
+    <form id="form_login">
+        <div class="form-group">
+        <ul class="list-group" style="padding: 12px 10px; border-color: #0051a8; border-color: #0051a8;">
+            <li class="list-group-item active" aria-current="true">Donor Details</li>
+            <li class="list-group-item">Name: {{allCon.name}}</li>
+            <li class="list-group-item">Blood group: {{allCon.blood}}</li>
+            <li class="list-group-item">State: {{allCon.state}}</li>
+            <li class="list-group-item">City: {{allCon.city}}</li>
+            <li class="list-group-item">Your reference ID: {{a}} </li>
+            <li class="list-group-item">Contact: {{allCon.mob}} </li>
+          </ul>
+        </div>
+
+        <div class="text-center">
+            <a href="/pnothelpful/{{a}}" class="btn btn-primary btn-lg" style="border-color: #0051a8" role="button">Not Helpful</a>
+            <a href="/home" class="btn btn-primary btn-lg" style="border-color: #0051a8;" role="button" >Homepage</a>
+        </div>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+</body>
+</html>

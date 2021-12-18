@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Donor Registration</title>
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="static/css/style.css" />
+	<link rel="stylesheet" href="static/css/donor.css" />
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Nunito:wght@300;400&family=Roboto:wght@300&display=swap"
+		rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Noto+Serif+JP&family=Roboto:wght@300&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+	<link rel="icon" href="static/img/logo1.png" type="image/jpg" sizes="16x16">
+	<style>
+		input[type="radio"] {
+			-ms-transform: scale(1.5);
+			/* IE 9 */
+			-webkit-transform: scale(1.5);
+			/* Chrome, Safari, Opera */
+			transform: scale(1.5);
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<section id="HOME">
+		<header>
+
+
+			<a href="/home" class="logo"><img src="static/img/logo2.png" alt="logo" /></a>
+			<div class="toggle" onclick="toggleMenu();"></div>
+			<ul class="menu">
+				<li><a href="/home" onclick="toggleMenu();">HOME</a></li>
+				<li><a href="/volunteer" onclick="toggleMenu();">VOLUNTEER</a></li>
+				<li><a href="/contact" onclick="toggleMenu();">CONTACT US</a></li>
+			</ul>
+
+
+		</header>
+
+		<section class="sect">
+			{% if err %}
+			<div style="margin: 10px;" class="alert alert-danger" role="alert">
+				<strong>Missing!&nbsp;</strong>{{err}}
+			</div>
+			{% endif %}
+		</section>
+
+		<form action="/donor" method="post">
+			<div class="form-group">
+				<u>
+					<h1>Donor Registration</h1>
+				</u>
+				<h3 style="text-align: center;">Am I a Donor?</h3>
+				<ol>
+
+
+					<li>
+						<p style="padding-left: 10%; font-weight: bold;">I should have tested positive for COVID-19.</p>
+					</li>
+					<li>
+						<p style="padding-left: 10%; font-weight: bold;"> I do not have any children (women only).</p>
+					</li>
+					<li>
+						<p style="padding-left: 10%; font-weight: bold;"> I do not have diabetes and high blood pressure.</p>
+					</li>
+					<li>
+						<p style="padding-left: 10%; font-weight: bold;"> I do not have any skin disease.</p>
+					</li>
+					<li>
+						<p style="padding-left: 10%; font-weight: bold;"> I have not been vaccinated till now.</p>
+					</li>
+					<li>
+						<p style="padding-left: 10%; font-weight: bold;">If your city name is not present in the list
+							select the nearest
+							city.</p>
+					</li>
+				</ol>
+			</div>
+			<fieldset>
+				<legend><span class="number">1</span>Did you ever suffer from COVID?</legend>
+				<div class="some-class form-group" style="display: flex;">
+					<label><input style="margin-left:40px;" type="radio" name="suffer" value="yes" required>Yes</label>
+					<label><input style="margin-left:40px;" type="radio" name="suffer" value="no">No</label>
+				</div>
+
+				<legend><span class="number">2</span>What is your name?</legend>
+				<div class="form-group ">
+					<input type="text" id="name" name="user_name" placeholder="Full Name" class="form-control" required>
+					<div class="invalid-feedback">
+						Must contain only English Alphabets (2-50 letters only)
+					  </div>
+				</div>
+
+				<legend><span class="number">3</span>What is your mobile number?</legend>
+
+				<div class="form-group ">
+					<input type="text" id="phone" name="user_mobile" placeholder="Mobile No."
+						class="form-control" required>
+						<div  class="invalid-feedback">
+							Invalid Mobile no.
+						  </div>
+				</div>
+
+				<legend><span class="number">4</span>What is your email address?</legend>
+
+				<div class="form-group">
+					<input type="email" id="email" name="email" placeholder="Email" class="form-control" required>
+					<div  class="invalid-feedback">
+						Invalid email!
+					  </div>
+				</div>
+
+
+				<legend><span class="number">5</span>How old are you?</legend>
+				<div class="form-group">
+					<input type="text" id="age" name="age" class="form-control" placeholder="Age" required>
+					<div id="ageVal" class="valid-feedback">
+						Invalid age!
+					  </div>
+				</div>
+
+
+				<legend><span class="number">6</span>Which state you are in?</legend>
+				<div class="form-group">
+					<select onchange="print_city('state', this.selectedIndex);" id="sts" name="state"
+						class="form-control" required></select>
+						<div  class="invalid-feedback">
+							You haven't chosen any option!
+						  </div>
+				</div>
+				<legend><span class="number">7</span>Which city you are in?</legend>
+				<div class="form-group">
+					<select name="city" id="state" class="form-control" required></select>
+					<div  class="invalid-feedback">
+						You haven't chosen any option!
+					  </div>
+				</div>
+
+				<legend><span class="number">8</span>Select your Gender</legend>
+				<div class="form-group">
+					<select class="form-select form-control" name="gender" aria-label="Default select example" required>
+						<option value="">Gender</option>
+						<option value="male"  >Male</option>
+						<option value="female" >Female</option>
+						<option  value="other" >Other</option>
+					  </select>
+					  <div class="invalid-feedback">
+						You haven't chosen any option!
+					  </div>
+
+				</div>
+
+
+				<legend><span class="number">9</span>Select your Blood-Group</legend>
+				<div class="form-group">
+					<select class="form-select form-control" name="blood-group" aria-label="Default select example" required>
+						<option value="">Blood-Group</option>
+						<option value="A+"  >A+</option>
+						<option value="A-" >A-</option>
+						<option  value="B+" >B+</option>
+						<option  value="B-" >B-</option>
+						<option  value="O+" >O+</option>
+						<option  value="O-" >O-</option>
+						<option  value="AB+" >AB+</option>
+						<option  value="AB-" >AB-</option>
+					  </select>
+					  <div class="invalid-feedback">
+						You haven't chosen any option!
+					  </div>
+				</div>
+
+
+				<legend><span class="number">10</span>What was your date of recovery?</legend>
+
+				<div class="form-group">
+					<input type="date" id="date" name="date" min={{dmin}} max={{dmax}} placeholder="Date"
+						class="form-control" required>
+
+				</div>
+
+
+			</fieldset>
+			<div class="form-group">
+				<ol><strong>By submitting this form,</strong>
+					<li>I confirm that the information I have provided in here is complete and accurate to the best of
+						my
+						knowledge.</li>
+					<li>I confirm that I have read and I fulfill the eligibility criteria of donors set out at
+						<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7264735/">given link</a>.
+					</li>
+					<li>I confirm that I wish to share the information provided in the form for the exclusive
+						purpose(s) of matching with patients from the database of patients registered with Sampark
+						Plasma
+						and sharing
+						this information directly and solely with the matched patients' point of contact.</li>
+				</ol>
+			</div>
+			<button id="submit" type="submit">Submit</button>
+		</form>
+
+		<footer class="footer" id="CONTACTUS">
+			<div class="container2">
+				<div class="row">
+
+					<div class="footer-col">
+						<h3>Navigate</h3>
+						<ul>
+							<li><a href="/home">Home</a></li>
+							<li><a href="/volunteer">Volunteer</a></li>
+							<li><a href="/contact">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="footer-col">
+						<h3>Sampark Plasma</h3>
+						<ul>
+							<li><a href="/sponsors">Sponsor</a></li>
+							<li><a href="/team">Team</a></li>
+						</ul>
+					</div>
+					<div class="footer-col">
+						<h3>Follow us</h3>
+						<div class="social-links">
+
+							<a style="padding:0px;" href="https://www.twitter.com/samparkplasma/"><i class="fab fa-twitter"></i></a>
+							<a style="padding:0px;" href="https://www.instagram.com/samparkplasma/"><i
+									class="fab fa-instagram"></i></a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</section>
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+	<script src="static/js/cities.js"></script>
+	<script language="javascript">print_state("sts");</script>
+	<script src="{{url_for('static', filename='js/java.js')}}"></script>
+	<script src="{{url_for('static', filename='js/valid-details.js')}}"></script>
+
+
+</body>
+
+</html>
