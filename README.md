@@ -1,4 +1,4 @@
-<div align="center"><img src="./static/images/Logo1.png" style="height: 200px;"></div>
+<div align="center"><img src="poster1.jpg" style="height: 200px;"></div>
 
 <h1 align="center">Sampark Plasma</h1>
 <h3 align="center">Bridging the gap by connecting donors and patients for plasma donation</h3>
