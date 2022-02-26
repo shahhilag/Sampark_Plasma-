@@ -23,7 +23,7 @@ Project Documentation
 </ol>
 </p>
 
-<div align="center"><img src="./static/images/UX.jpg" style="height: 200px;" /></div>
+<div align="center"><img src="SP.jpg" style="height: 300px;" /></div>
 
 <hr>
 <h3 align="center">Unique Features</h3>
