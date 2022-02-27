@@ -49,6 +49,7 @@ Project Documentation
 <br>
 <br>
 
+<hr>
 <h3 align="center">Steps for installation</h3>
 <hr>
 <ol>
