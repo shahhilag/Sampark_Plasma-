@@ -5,6 +5,17 @@
 <br><br>
 <p align="center" style="margin-top:10px">
 <hr>
+
+<h3 align="center">
+Achievement
+</h3> 
+<hr>
+<br> 
+<ul>
+<li>Helped 40 patients in a span of 3 months via the project.</li>
+</ul>
+
+<hr>
 <h3 align="center">
 Project Documentation
 </h3> 
