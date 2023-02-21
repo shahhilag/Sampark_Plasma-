@@ -1,4 +1,6 @@
-<div align="center"><img src="poster1.jpg" style="height: 200px;"></div>
+<div align="center">
+![poster1](https://user-images.githubusercontent.com/64307441/220327960-c695ae97-f698-4b64-b9a9-2b9ffadc1720.jpg)
+</div>
 
 <h1 align="center">Sampark Plasma</h1>
 <h3 align="center">Bridging the gap by connecting donors and patients for plasma donation</h3>
@@ -34,7 +36,10 @@ Project Documentation
 </ol>
 </p>
 
-<div align="center"><img src="SP.jpg" style="height: 300px;" /></div>
+
+<div align="center">
+![SP](https://user-images.githubusercontent.com/64307441/220328470-c2401fd1-1c22-4eb3-9980-60bc29cebcca.jpg)
+</div>
 
 <hr>
 <h3 align="center">Unique Features</h3>
