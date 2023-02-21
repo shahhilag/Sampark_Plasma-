@@ -1,5 +1,5 @@
 <div align="center">
-<img width="164" alt="Logo1" src="https://user-images.githubusercontent.com/64307441/220327960-c695ae97-f698-4b64-b9a9-2b9ffadc1720.jpg">
+<img width="300" alt="Logo1" src="https://user-images.githubusercontent.com/64307441/220327960-c695ae97-f698-4b64-b9a9-2b9ffadc1720.jpg">
 </div>
 
 <h1 align="center">Sampark Plasma</h1>
@@ -37,7 +37,7 @@ Project Documentation
 </p>
 
 <div align="center">
-<img width="164" alt="Logo1" src="https://user-images.githubusercontent.com/64307441/220328470-c2401fd1-1c22-4eb3-9980-60bc29cebcca.jpg">
+<img alt="Logo1" src="https://user-images.githubusercontent.com/64307441/220328470-c2401fd1-1c22-4eb3-9980-60bc29cebcca.jpg">
 </div>
 
 <hr>
