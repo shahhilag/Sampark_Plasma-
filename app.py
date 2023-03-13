@@ -11,8 +11,8 @@ app = Flask(__name__)
 app.secret_key = "@@@12345@@@"
 app.config['UPLOAD_FOLDER'] = '/home/site/wwwroot/appdata/prescription'
 
-url = "mongodb+srv://Plasma:Plasma1234#@cluster0.53ruc.mongodb.net/plasmadetails?retryWrites=true&w=majority"
-client = "mongodb+srv://contactdb:hrithik1234very@cluster0.e4fl5.mongodb.net/details?retryWrites=true&w=majority"
+url = "mongodb+srv://hilag:hilag@cluster0.6y4qh.mongodb.net/sih?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE"
+client = "mongodb+srv://hilag:hilag@cluster0.6y4qh.mongodb.net/sih?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE"
 tcluster = MongoClient(client)
 cluster = MongoClient(url)
 db = cluster["plasmadetails"]
