@@ -13,8 +13,8 @@ app.config['UPLOAD_FOLDER'] = '/home/site/wwwroot/appdata/prescription'
 
 url = "mongodb+srv://hilag:hilag@cluster0.6y4qh.mongodb.net/sih?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE"
 client = "mongodb+srv://hilag:hilag@cluster0.6y4qh.mongodb.net/sih?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE"
-tcluster = MongoClient(client)
-cluster = MongoClient(url)
+tcluster = MongoClient(client,authSource="admin")
+cluster = MongoClient(url,authSource="admin")
 db = cluster["plasmadetails"]
 pcollection = db['Patient']
 dcollection = db['Donor']
